@@ -9,22 +9,13 @@
 import UIKit
 
 class AccelerometerCell: UITableViewCell {
-    
-    @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
-    @IBOutlet weak var zLabel: UILabel!
-    
-    @IBOutlet weak var xTitleLabel: UILabel!
     @IBOutlet weak var yTitleLabel: UILabel!
-    @IBOutlet weak var zTitleLabel: UILabel!
     
-    var accelerometer : Accelerometer? {
+    var gyro : Gyro? {
         didSet {
-            guard let accelerometer = accelerometer else { return }
-            
-            xLabel.text = String(format: "%.1f", accelerometer.x)
-            yLabel.text = String(format: "%.1f", accelerometer.y)
-            zLabel.text = String(format: "%.1f", accelerometer.z)
+            guard let gyro = gyro else { return }
+            yLabel.text = String(format: "%.3f", (gyro.z * -9.5493))
         }
     }
 }

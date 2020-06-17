@@ -12,7 +12,7 @@ import RxCocoa
 import SensingKit
 
 struct ViewModel {
-    weak var accelerometerService: AccelerometerServiceObservable?
+    weak var gyroService: GyroServiceObservable?
 
     let input: Input
     let output: Output
@@ -24,12 +24,12 @@ struct ViewModel {
     }
     
     struct Output {
-        let accelerometer: Driver<[Accelerometer]>
+        let accelerometer: Driver<[Gyro]>
         let errorMessage: Driver<String>
     }
     
-    init(accelerometerService: AccelerometerServiceObservable = AccelerometerService.shared) {
-        self.accelerometerService = accelerometerService
+    init(gyroService: GyroServiceObservable = GyroService.shared) {
+        self.gyroService = gyroService
         
         let errorRelay = PublishRelay<String>()
         let reloadRelay = PublishRelay<Void>()
@@ -37,10 +37,10 @@ struct ViewModel {
         let accelerometer = reloadRelay
             .asObservable()
             .flatMapLatest({
-                accelerometerService.fetchReading()
+                gyroService.fetchReading()
             })
             .map({ $0 })
-            .asDriver { (error) -> Driver<[Accelerometer]> in
+            .asDriver { (error) -> Driver<[Gyro]> in
                 errorRelay.accept((error as? ErrorResult)?.localizedDescription ?? error.localizedDescription)
                 return Driver.just([])
         }

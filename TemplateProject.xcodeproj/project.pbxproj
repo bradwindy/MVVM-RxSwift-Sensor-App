@@ -23,6 +23,8 @@
 		14917E23200A530800234393 /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E22200A530800234393 /* ParserHelper.swift */; };
 		14917E27200A53CD00234393 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E26200A53CD00234393 /* RequestService.swift */; };
 		3B29770B4EF76E522A226F9C /* Pods_TemplateProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB0745A6EF7C194F99376DD /* Pods_TemplateProjectTests.framework */; };
+		699E0A96249A2BEF00F881F0 /* GyroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E0A95249A2BEF00F881F0 /* GyroService.swift */; };
+		699E0A98249A2C1F00F881F0 /* GyroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E0A97249A2C1F00F881F0 /* GyroModel.swift */; };
 		69A2B9DF2499B92C00260871 /* FileDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B9DE2499B92C00260871 /* FileDataService.swift */; };
 		69A2B9E12499EDD400260871 /* AccelerometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B9E02499EDD400260871 /* AccelerometerModel.swift */; };
 		69A2B9E32499EE5100260871 /* AccelerometerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B9E22499EE5100260871 /* AccelerometerService.swift */; };
@@ -59,6 +61,8 @@
 		14917E1F200A52DF00234393 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		14917E22200A530800234393 /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
 		14917E26200A53CD00234393 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		699E0A95249A2BEF00F881F0 /* GyroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroService.swift; sourceTree = "<group>"; };
+		699E0A97249A2C1F00F881F0 /* GyroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroModel.swift; sourceTree = "<group>"; };
 		69A2B9DE2499B92C00260871 /* FileDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDataService.swift; sourceTree = "<group>"; };
 		69A2B9E02499EDD400260871 /* AccelerometerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerModel.swift; sourceTree = "<group>"; };
 		69A2B9E22499EE5100260871 /* AccelerometerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerService.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				14917E0A200A488D00234393 /* Result */,
 				69A2B9DE2499B92C00260871 /* FileDataService.swift */,
 				69A2B9E22499EE5100260871 /* AccelerometerService.swift */,
+				699E0A95249A2BEF00F881F0 /* GyroService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				69A2B9E02499EDD400260871 /* AccelerometerModel.swift */,
+				699E0A97249A2C1F00F881F0 /* GyroModel.swift */,
 				1456E4B4200A7F2200DCF2AF /* DynamicValue.swift */,
 			);
 			path = Models;
@@ -370,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E0A98249A2C1F00F881F0 /* GyroModel.swift in Sources */,
 				14917E19200A508700234393 /* AccelerometerCell.swift in Sources */,
 				14917E23200A530800234393 /* ParserHelper.swift in Sources */,
 				69A2B9DF2499B92C00260871 /* FileDataService.swift in Sources */,
@@ -384,6 +391,7 @@
 				14917E0E200A48AB00234393 /* ErrorResult.swift in Sources */,
 				142350DE2009668500930F1D /* AccelerometerViewController.swift in Sources */,
 				69A2B9E12499EDD400260871 /* AccelerometerModel.swift in Sources */,
+				699E0A96249A2BEF00F881F0 /* GyroService.swift in Sources */,
 				142350DC2009668500930F1D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

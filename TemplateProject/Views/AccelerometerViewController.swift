@@ -29,7 +29,7 @@ class AccelerometerViewController: UIViewController {
             self.tableView.rx.items(cellIdentifier: "AccelerometerCell",
                                     cellType: AccelerometerCell.self)) { (row, sensor, cell) in
                                         
-                                        cell.accelerometer = sensor
+                                        cell.gyro = sensor
                                         
         }.disposed(by: disposeBag)
         
