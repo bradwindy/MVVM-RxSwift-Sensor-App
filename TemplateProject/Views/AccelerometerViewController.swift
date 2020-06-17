@@ -35,10 +35,8 @@ class AccelerometerViewController: UIViewController {
         
         self.viewModel.output.errorMessage
             .drive(onNext: { [weak self] errorMessage in
-                guard let strongSelf = self else { return }
-                
-                strongSelf.showError(errorMessage)
-                
+                guard let self = self else { return }
+                self.showError(errorMessage)
             }).disposed(by: disposeBag)
         
         // Reloads viewModel with void event as it is the initial load

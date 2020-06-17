@@ -112,10 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				14917E1E200A52CD00234393 /* Resources */,
-				14917E12200A4EC000234393 /* Model */,
-				14917E09200A486F00234393 /* Service */,
-				142350FC200968A900930F1D /* ViewModel */,
-				142350FB2009689B00930F1D /* View */,
+				14917E12200A4EC000234393 /* Models */,
+				14917E09200A486F00234393 /* Services */,
+				142350FC200968A900930F1D /* ViewModels */,
+				142350FB2009689B00930F1D /* Views */,
 				142350DB2009668500930F1D /* AppDelegate.swift */,
 				142350DF2009668500930F1D /* Main.storyboard */,
 				142350E22009668500930F1D /* Assets.xcassets */,
@@ -125,24 +125,24 @@
 			path = TemplateProject;
 			sourceTree = "<group>";
 		};
-		142350FB2009689B00930F1D /* View */ = {
+		142350FB2009689B00930F1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				142350DD2009668500930F1D /* AccelerometerViewController.swift */,
 				14917E18200A508700234393 /* AccelerometerCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		142350FC200968A900930F1D /* ViewModel */ = {
+		142350FC200968A900930F1D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				14917E16200A4F4600234393 /* ViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		14917E09200A486F00234393 /* Service */ = {
+		14917E09200A486F00234393 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				14917E21200A52F600234393 /* Parser */,
@@ -151,7 +151,7 @@
 				69A2B9DE2499B92C00260871 /* FileDataService.swift */,
 				69A2B9E22499EE5100260871 /* AccelerometerService.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		14917E0A200A488D00234393 /* Result */ = {
@@ -173,13 +173,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		14917E12200A4EC000234393 /* Model */ = {
+		14917E12200A4EC000234393 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				69A2B9E02499EDD400260871 /* AccelerometerModel.swift */,
 				1456E4B4200A7F2200DCF2AF /* DynamicValue.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		14917E1E200A52CD00234393 /* Resources */ = {
