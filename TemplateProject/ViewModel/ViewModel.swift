@@ -1,5 +1,5 @@
 //
-//  CurrencyViewModel.swift
+//  ViewModel.swift
 //  TemplateProject
 //
 //  Created by Benoit PASQUIER on 13/01/2018.
@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 import SensingKit
 
-struct CurrencyViewModel {
-    weak var sensorService: SensorServiceObservable?
+struct ViewModel {
+    weak var accelerometerService: AccelerometerServiceObservable?
 
     let input: Input
     let output: Output
@@ -24,24 +24,24 @@ struct CurrencyViewModel {
     }
     
     struct Output {
-        let battery: Driver<[Sensor]>
+        let accelerometer: Driver<[Accelerometer]>
         let errorMessage: Driver<String>
     }
     
     init(currService: CurrencyServiceObservable = FileDataService.shared,
-         sensorService: SensorServiceObservable = SensorService.shared) {
-        self.sensorService = sensorService
+         accelerometerService: AccelerometerServiceObservable = AccelerometerService.shared) {
+        self.accelerometerService = accelerometerService
         
         let errorRelay = PublishRelay<String>()
         let reloadRelay = PublishRelay<Void>()
         
-        let battery = reloadRelay
+        let accelerometer = reloadRelay
             .asObservable()
             .flatMapLatest({
-                sensorService.fetchReading()
+                accelerometerService.fetchReading()
             })
             .map({ $0 })
-            .asDriver { (error) -> Driver<[Sensor]> in
+            .asDriver { (error) -> Driver<[Accelerometer]> in
                 errorRelay.accept((error as? ErrorResult)?.localizedDescription ?? error.localizedDescription)
                 return Driver.just([])
         }
@@ -49,7 +49,7 @@ struct CurrencyViewModel {
         
         
         self.input = Input(reload: reloadRelay)
-        self.output = Output(battery: battery,
+        self.output = Output(accelerometer: accelerometer,
                              errorMessage: errorRelay.asDriver(onErrorJustReturn: "An error happened"))
     }
 }

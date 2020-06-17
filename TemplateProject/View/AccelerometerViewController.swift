@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AccelerometerViewController.swift
 //  TemplateProject
 //
 //  Created by Benoit PASQUIER on 12/01/2018.
@@ -10,11 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CurrencyViewController: UIViewController {
+class AccelerometerViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var tableView : UITableView! 
     
-    let viewModel = CurrencyViewModel()
+    let viewModel = ViewModel()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -25,13 +25,12 @@ class CurrencyViewController: UIViewController {
     
     private func bindViews() {
         // bind data to tableview
-        self.viewModel.output.battery.drive(self.tableView.rx.items(cellIdentifier: "CurrencyCell",
-                                                                  cellType: CurrencyCell.self)) { (row, sensor, cell) in
-                                                                    
-                                                                    cell.currencyRate = CurrencyRate(
-                                                                        currencyIso: sensor.info,
-                                                                        rate: Double(0)
-                                                                    )
+        self.viewModel.output.accelerometer.drive(
+            self.tableView.rx.items(cellIdentifier: "AccelerometerCell",
+                                    cellType: AccelerometerCell.self)) { (row, sensor, cell) in
+                                        
+                                        cell.accelerometer = sensor
+                                        
         }.disposed(by: disposeBag)
         
         self.viewModel.output.errorMessage
