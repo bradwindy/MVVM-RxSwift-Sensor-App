@@ -7,35 +7,49 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import SensingKit
 
 struct CurrencyViewModel {
+    weak var sensorService: SensorServiceObservable?
+
+    let input: Input
+    let output: Output
     
-    weak var dataSource : GenericDataSource<CurrencyRate>?
-    weak var service: CurrencyServiceProtocol?
+    let sensingKit = SensingKitLib.shared()
     
-    var onErrorHandling : ((ErrorResult?) -> Void)?
-    
-    init(service: CurrencyServiceProtocol = FileDataService.shared, dataSource : GenericDataSource<CurrencyRate>?) {
-        self.dataSource = dataSource
-        self.service = service
+    struct Input {
+        let reload: PublishRelay<Void>
     }
     
-    func fetchCurrencies() {
+    struct Output {
+        let battery: Driver<[Sensor]>
+        let errorMessage: Driver<String>
+    }
+    
+    init(currService: CurrencyServiceObservable = FileDataService.shared,
+         sensorService: SensorServiceObservable = SensorService.shared) {
+        self.sensorService = sensorService
         
-        guard let service = service else {
-            onErrorHandling?(ErrorResult.custom(string: "Missing service"))
-            return
-        }
+        let errorRelay = PublishRelay<String>()
+        let reloadRelay = PublishRelay<Void>()
         
-        service.fetchConverter { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let converter) :
-                    self.dataSource?.data.value = converter.rates
-                case .failure(let error) :
-                    self.onErrorHandling?(error)
-                }
-            }
+        let battery = reloadRelay
+            .asObservable()
+            .flatMapLatest({
+                sensorService.fetchReading()
+            })
+            .map({ $0 })
+            .asDriver { (error) -> Driver<[Sensor]> in
+                errorRelay.accept((error as? ErrorResult)?.localizedDescription ?? error.localizedDescription)
+                return Driver.just([])
         }
+
+        
+        
+        self.input = Input(reload: reloadRelay)
+        self.output = Output(battery: battery,
+                             errorMessage: errorRelay.asDriver(onErrorJustReturn: "An error happened"))
     }
 }
