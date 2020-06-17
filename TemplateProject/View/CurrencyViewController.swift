@@ -19,35 +19,34 @@ class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.title = "£ Exchange rate"
+        self.title = "Device Orientation Value"
         self.bindViews()
     }
     
     private func bindViews() {
-    
         // bind data to tableview
-        self.viewModel.output.rates
-            .drive(self.tableView.rx.items(cellIdentifier: "CurrencyCell", cellType: CurrencyCell.self)) { (row, currencyRate, cell) in
-                cell.currencyRate = currencyRate
-            }
-            .disposed(by: disposeBag) 
+        self.viewModel.output.battery.drive(self.tableView.rx.items(cellIdentifier: "CurrencyCell",
+                                                                  cellType: CurrencyCell.self)) { (row, sensor, cell) in
+                                                                    
+                                                                    cell.currencyRate = CurrencyRate(
+                                                                        currencyIso: sensor.info,
+                                                                        rate: Double(0)
+                                                                    )
+        }.disposed(by: disposeBag)
         
         self.viewModel.output.errorMessage
             .drive(onNext: { [weak self] errorMessage in
                 guard let strongSelf = self else { return }
+                
                 strongSelf.showError(errorMessage)
-            })
-            .disposed(by: disposeBag)
+                
+            }).disposed(by: disposeBag)
         
+        // Reloads viewModel with void event as it is the initial load
         self.viewModel.input.reload.accept(())
     }
     
-    // MARK: - UI
-    
     private func showError(_ errorMessage: String) {
-        
-        // display error ?
         let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
         self.present(controller, animated: true, completion: nil)
