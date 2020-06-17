@@ -9,6 +9,7 @@ target 'TemplateProject' do
   pod 'RxSwift',    '~> 5.1.1'
   pod 'RxCocoa',    '~> 5.1.1'
   pod 'SensingKit'
+  pod 'RxCoreMotion'
 
   target 'TemplateProjectTests' do
     inherit! :search_paths

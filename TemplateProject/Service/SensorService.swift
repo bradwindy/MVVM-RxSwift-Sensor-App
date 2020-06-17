@@ -9,7 +9,8 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import SensingKit
+import CoreMotion
+import RxCoreMotion
 
 protocol SensorServiceObservable: class {
     func fetchReading() -> Observable<[Sensor]>
@@ -17,10 +18,20 @@ protocol SensorServiceObservable: class {
 
 final class SensorService: RequestHandler, SensorServiceObservable {
     static let shared = SensorService()
-    let sensingKit = SensingKitLib.shared()
+    let coreMotionManager = CMMotionManager.rx.manager()
     
     func fetchReading() -> Observable<[Sensor]> {
-        return NotificationCenter.default.rx.notification(.UIDeviceOrientationDidChange)
-            .observeOn(MainScheduler.instance).map({ _ in [Sensor(info: String(UIDevice.current.orientation.rawValue))]})
+        return coreMotionManager
+        .flatMapLatest { manager in
+            manager.acceleration ?? Observable.empty()
+        }
+        .observeOn(MainScheduler.instance)
+        .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+        .map({ [Sensor(
+            info: [String(format: "%.2f", $0.x),
+                   String(format: "%.2f", $0.y),
+                   String(format: "%.2f", $0.z)]
+            .joined(separator: ", "))]
+        })
     }
 }

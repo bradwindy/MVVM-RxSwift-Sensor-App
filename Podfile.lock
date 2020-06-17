@@ -4,6 +4,8 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxCoreMotion (1.2.1):
+    - RxSwift
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -14,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - RxBlocking (~> 5.1.1)
   - RxCocoa (~> 5.1.1)
+  - RxCoreMotion
   - RxSwift (~> 5.1.1)
   - RxTest (~> 5.1.1)
   - SensingKit
@@ -22,6 +25,7 @@ SPEC REPOS:
   trunk:
     - RxBlocking
     - RxCocoa
+    - RxCoreMotion
     - RxRelay
     - RxSwift
     - RxTest
@@ -30,11 +34,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxCoreMotion: d4edac149ab1e9c4d5bf0e22d786e8169e22a274
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SensingKit: e4acb178652e6bcf23e564f2da111e5087b39e79
 
-PODFILE CHECKSUM: fbbb7f21db55ca46fce6f4403904d50d8d3252e4
+PODFILE CHECKSUM: 943c747f40ecef268270664a60974134f5285734
 
 COCOAPODS: 1.9.3
