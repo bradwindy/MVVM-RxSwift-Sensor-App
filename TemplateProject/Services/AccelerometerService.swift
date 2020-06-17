@@ -16,7 +16,7 @@ protocol AccelerometerServiceObservable: class {
     func fetchReading() -> Observable<[Accelerometer]>
 }
 
-final class AccelerometerService: RequestHandler, AccelerometerServiceObservable {
+final class AccelerometerService: AccelerometerServiceObservable {
     static let shared = AccelerometerService()
     let coreMotionManager = CMMotionManager.rx.manager()
     
