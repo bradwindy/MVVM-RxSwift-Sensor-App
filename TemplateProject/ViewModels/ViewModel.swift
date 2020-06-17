@@ -28,8 +28,7 @@ struct ViewModel {
         let errorMessage: Driver<String>
     }
     
-    init(currService: CurrencyServiceObservable = FileDataService.shared,
-         accelerometerService: AccelerometerServiceObservable = AccelerometerService.shared) {
+    init(accelerometerService: AccelerometerServiceObservable = AccelerometerService.shared) {
         self.accelerometerService = accelerometerService
         
         let errorRelay = PublishRelay<String>()
@@ -46,8 +45,6 @@ struct ViewModel {
                 return Driver.just([])
         }
 
-        
-        
         self.input = Input(reload: reloadRelay)
         self.output = Output(accelerometer: accelerometer,
                              errorMessage: errorRelay.asDriver(onErrorJustReturn: "An error happened"))
