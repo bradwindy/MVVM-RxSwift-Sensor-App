@@ -1,8 +1,8 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "${PODS_CONFIGURATION_BUILD_DIR}/RxBlocking" "${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa" "${PODS_CONFIGURATION_BUILD_DIR}/RxCoreMotion" "${PODS_CONFIGURATION_BUILD_DIR}/RxRelay" "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift" "${PODS_CONFIGURATION_BUILD_DIR}/RxTest" "${PODS_CONFIGURATION_BUILD_DIR}/SensingKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(PLATFORM_DIR)/Developer/Library/Frameworks" "${PODS_CONFIGURATION_BUILD_DIR}/RxBlocking" "${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa" "${PODS_CONFIGURATION_BUILD_DIR}/RxRelay" "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift" "${PODS_CONFIGURATION_BUILD_DIR}/RxTest"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/RxBlocking/RxBlocking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxCoreMotion/RxCoreMotion.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxTest/RxTest.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SensingKit/SensingKit.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "CoreMotion" -framework "Foundation" -framework "RxBlocking" -framework "RxTest" -framework "XCTest"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/RxBlocking/RxBlocking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RxTest/RxTest.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "RxBlocking" -framework "RxTest" -framework "XCTest"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

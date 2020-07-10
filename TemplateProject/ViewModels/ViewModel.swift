@@ -9,44 +9,39 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import SensingKit
 
 struct ViewModel {
-    weak var gyroService: GyroServiceObservable?
-
+    weak var apiService: APIServiceObservable?
     let input: Input
     let output: Output
-    
-    let sensingKit = SensingKitLib.shared()
     
     struct Input {
         let reload: PublishRelay<Void>
     }
     
     struct Output {
-        let accelerometer: Driver<[Gyro]>
+        let planets: Driver<[Planet]>
         let errorMessage: Driver<String>
     }
     
-    init(gyroService: GyroServiceObservable = GyroService.shared) {
-        self.gyroService = gyroService
+    init(apiService: APIServiceObservable = APIService.shared) {
+        self.apiService = apiService
         
         let errorRelay = PublishRelay<String>()
         let reloadRelay = PublishRelay<Void>()
         
-        let accelerometer = reloadRelay
+        let planets = reloadRelay
             .asObservable()
-            .flatMapLatest({
-                gyroService.fetchReading()
-            })
-            .map({ $0 })
-            .asDriver { (error) -> Driver<[Gyro]> in
+            .flatMapLatest({ apiService.fetchPlanets() })
+            .map({ $0.results })
+            .asDriver { (error) -> Driver<[Planet]> in
                 errorRelay.accept((error as? ErrorResult)?.localizedDescription ?? error.localizedDescription)
                 return Driver.just([])
-        }
-
+            }
+        
+        
         self.input = Input(reload: reloadRelay)
-        self.output = Output(accelerometer: accelerometer,
+        self.output = Output(planets: planets,
                              errorMessage: errorRelay.asDriver(onErrorJustReturn: "An error happened"))
     }
 }

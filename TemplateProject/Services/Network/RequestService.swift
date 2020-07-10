@@ -9,9 +9,9 @@
 import Foundation
 
 final class RequestService {
-    
-    // todo add model
-    func loadData(urlString: String, session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
+    func loadData(urlString: String,
+                  session: URLSession = URLSession(configuration: .default),
+                  completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
         
         guard let url = URL(string: urlString) else {
             completion(.failure(.network(string: "Wrong url format")))
@@ -34,6 +34,7 @@ final class RequestService {
                 completion(.success(data))
             }
         }
+        
         task.resume()
         return task
     }

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class AccelerometerViewController: UIViewController {
+class PlanetTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -19,17 +19,17 @@ class AccelerometerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Device Orientation Value"
+        self.title = "Star Wars Planets"
         self.bindViews()
     }
     
     private func bindViews() {
         // bind data to tableview
-        self.viewModel.output.accelerometer.drive(
-            self.tableView.rx.items(cellIdentifier: "AccelerometerCell",
-                                    cellType: AccelerometerCell.self)) { (row, sensor, cell) in
+        self.viewModel.output.planets.drive(
+            self.tableView.rx.items(cellIdentifier: "PlanetCell",
+                                    cellType: PlanetCell.self)) { (row, planet, cell) in
                                         
-                                        cell.gyro = sensor
+                                        cell.planet = planet
                                         
         }.disposed(by: disposeBag)
         
@@ -44,7 +44,7 @@ class AccelerometerViewController: UIViewController {
     }
     
     private func showError(_ errorMessage: String) {
-        let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
+        let controller = UIAlertController(title: "An error occured", message: errorMessage, preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
         self.present(controller, animated: true, completion: nil)
     }

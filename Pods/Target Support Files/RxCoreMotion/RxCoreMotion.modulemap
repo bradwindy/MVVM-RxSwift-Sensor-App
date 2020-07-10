@@ -1,6 +1,0 @@
-framework module RxCoreMotion {
-  umbrella header "RxCoreMotion-umbrella.h"
-
-  export *
-  module * { export * }
-}

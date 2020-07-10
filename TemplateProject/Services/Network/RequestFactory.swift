@@ -9,7 +9,6 @@
 import Foundation
 
 final class RequestFactory {
-    
     enum Method: String {
         case GET
         case POST
