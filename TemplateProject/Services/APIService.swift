@@ -47,7 +47,7 @@ final class APIService: RequestHandler, APIServiceObservable {
     func cancelFetch() {
         if let task = task {
             task.cancel()
-            task = nil
         }
+        task = nil
     }
 }
