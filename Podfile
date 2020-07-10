@@ -8,6 +8,7 @@ target 'TemplateProject' do
   # Pods for TemplateProject
   pod 'RxSwift',    '~> 5.1.1'
   pod 'RxCocoa',    '~> 5.1.1'
+  pod 'RxGesture'
 
   target 'TemplateProjectTests' do
     inherit! :search_paths

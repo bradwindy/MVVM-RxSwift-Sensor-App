@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 
 class PlanetTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +22,21 @@ class PlanetTableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Star Wars Planets"
         self.bindViews()
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                let cell = self?.tableView.cellForRow(at: indexPath) as? PlanetCell
+                let planet = cell?.planet
+                
+                let alertController = UIAlertController(title: planet?.name.capitalized,
+                                                        message: "Population: \(planet?.population ?? "unknown")",
+                                                        preferredStyle: .alert)
+
+                let action = UIAlertAction(title: "OK", style: .default) { (action) in}
+                alertController.addAction(action)
+                self?.present(alertController, animated: true, completion: nil)
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+            }).disposed(by: disposeBag)
     }
     
     private func bindViews() {
