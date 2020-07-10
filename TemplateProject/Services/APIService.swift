@@ -21,7 +21,7 @@ final class APIService: RequestHandler, APIServiceObservable {
     func fetchPlanets() -> Observable<PlanetResponse> {
         return Observable.create { [weak self] observer in
             guard let self = self else { return observer.onCompleted() as! Disposable }
-            self.cancelFetchCurrencies()
+            self.cancelFetch()
             self.task = RequestService().loadData(urlString: self.endpoint,
                                                   completion: self.networkResult(){ (result: Result<PlanetResponse, ErrorResult>) in
                                                     
@@ -44,9 +44,10 @@ final class APIService: RequestHandler, APIServiceObservable {
         }
     }
     
-    func cancelFetchCurrencies() {
-        // TODO maybe combine these
-        if let task = task { task.cancel() }
-        task = nil
+    func cancelFetch() {
+        if let task = task {
+            task.cancel()
+            task = nil
+        }
     }
 }
