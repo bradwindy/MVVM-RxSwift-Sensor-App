@@ -20,29 +20,40 @@ class PlanetTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Star Wars Planets"
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground()
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
+        navBarAppearance.backgroundColor = .systemBackground
+        navBarAppearance.shadowColor = .none
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        navigationController?.navigationBar.tintColor = .label
+        
         self.bindViews()
         
-        tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                let cell = self?.tableView.cellForRow(at: indexPath) as? PlanetCell
-                let planet = cell?.planet
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            let cell = self?.tableView.cellForRow(at: indexPath) as? PlanetCell
+            let planet = cell?.planet
+            
+            if let planet = planet {
+                let detailViewModel = DetailScreenViewModel(planet: planet)
                 
-                if let planet = planet {
-                    let detailViewModel = DetailScreenViewModel(planet: planet)
-                                    
-                    let storyboard: UIStoryboard = UIStoryboard(name: "DetailScreenStoryboard", bundle: nil)
-                    
-                    // Set using storyboard ID in storyboard
-                    let detailScreenViewController = storyboard.instantiateViewController(withIdentifier: "DetailScreen") as! DetailScreenViewController
-                    
-                    detailScreenViewController.viewModel = detailViewModel
-                    
-                    self?.navigationController?.pushViewController(detailScreenViewController, animated: true)
-                }
+                let storyboard: UIStoryboard = UIStoryboard(name: "DetailScreenStoryboard", bundle: nil)
                 
-                self?.tableView.deselectRow(at: indexPath, animated: true)
-            }).disposed(by: disposeBag)
+                // Set using storyboard ID in storyboard
+                let detailScreenViewController = storyboard.instantiateViewController(withIdentifier: "DetailScreen") as! DetailScreenViewController
+                
+                detailScreenViewController.viewModel = detailViewModel
+                
+                self?.navigationController?.pushViewController(detailScreenViewController, animated: true)
+            }
+            
+            self?.tableView.deselectRow(at: indexPath, animated: true)
+        }).disposed(by: disposeBag)
     }
     
     private func bindViews() {

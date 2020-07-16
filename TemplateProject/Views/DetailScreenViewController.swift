@@ -20,14 +20,16 @@ class DetailScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Star Wars Planets"
         self.bindViews()
     }
     
     private func bindViews() {
         self.viewModel.output.planet.drive(onNext: { [weak self] planet in
+            self?.title = planet?.name
+            
             // Send data to outlets here
             self?.testLabel.text = planet?.population
+            
         }).disposed(by: disposeBag)
         
         self.viewModel.output.errorMessage.drive(onNext: { [weak self] errorMessage in
