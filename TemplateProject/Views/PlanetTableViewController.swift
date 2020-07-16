@@ -1,5 +1,5 @@
 //
-//  AccelerometerViewController.swift
+//  PlanetTableViewController.swift
 //  TemplateProject
 //
 //  Created by Benoit PASQUIER on 12/01/2018.
@@ -15,7 +15,7 @@ class PlanetTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    let viewModel = ViewModel()
+    let viewModel = PlanetListViewModel()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -28,13 +28,19 @@ class PlanetTableViewController: UIViewController {
                 let cell = self?.tableView.cellForRow(at: indexPath) as? PlanetCell
                 let planet = cell?.planet
                 
-                let alertController = UIAlertController(title: planet?.name.capitalized,
-                                                        message: "Population: \(planet?.population ?? "unknown")",
-                                                        preferredStyle: .alert)
-
-                let action = UIAlertAction(title: "OK", style: .default) { (action) in}
-                alertController.addAction(action)
-                self?.present(alertController, animated: true, completion: nil)
+                if let planet = planet {
+                    let detailViewModel = DetailScreenViewModel(planet: planet)
+                                    
+                    let storyboard: UIStoryboard = UIStoryboard(name: "DetailScreenStoryboard", bundle: nil)
+                    
+                    // Set using storyboard ID in storyboard
+                    let detailScreenViewController = storyboard.instantiateViewController(withIdentifier: "DetailScreen") as! DetailScreenViewController
+                    
+                    detailScreenViewController.viewModel = detailViewModel
+                    
+                    self?.navigationController?.pushViewController(detailScreenViewController, animated: true)
+                }
+                
                 self?.tableView.deselectRow(at: indexPath, animated: true)
             }).disposed(by: disposeBag)
     }
@@ -49,11 +55,10 @@ class PlanetTableViewController: UIViewController {
                                         
         }.disposed(by: disposeBag)
         
-        self.viewModel.output.errorMessage
-            .drive(onNext: { [weak self] errorMessage in
-                guard let self = self else { return }
-                self.showError(errorMessage)
-            }).disposed(by: disposeBag)
+        self.viewModel.output.errorMessage.drive(onNext: { [weak self] errorMessage in
+            guard let self = self else { return }
+            self.showError(errorMessage)
+        }).disposed(by: disposeBag)
         
         // Reloads viewModel with void event as it is the initial load
         self.viewModel.input.reload.accept(())

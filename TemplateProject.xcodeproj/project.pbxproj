@@ -16,13 +16,16 @@
 		14917E0C200A489A00234393 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E0B200A489A00234393 /* Result.swift */; };
 		14917E0E200A48AB00234393 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E0D200A48AB00234393 /* ErrorResult.swift */; };
 		14917E11200A491C00234393 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E10200A491C00234393 /* RequestFactory.swift */; };
-		14917E17200A4F4600234393 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E16200A4F4600234393 /* ViewModel.swift */; };
+		14917E17200A4F4600234393 /* PlanetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E16200A4F4600234393 /* PlanetListViewModel.swift */; };
 		14917E19200A508700234393 /* PlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E18200A508700234393 /* PlanetCell.swift */; };
 		14917E1B200A523E00234393 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E1A200A523E00234393 /* RequestHandler.swift */; };
 		14917E20200A52DF00234393 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E1F200A52DF00234393 /* Reachability.swift */; };
 		14917E23200A530800234393 /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E22200A530800234393 /* ParserHelper.swift */; };
 		14917E27200A53CD00234393 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E26200A53CD00234393 /* RequestService.swift */; };
 		69A2B9E32499EE5100260871 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B9E22499EE5100260871 /* APIService.swift */; };
+		69DE5FD724B842AD00D327D2 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */; };
+		69DE5FD924B8449300D327D2 /* DetailScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */; };
+		69DE5FDB24B846F800D327D2 /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DE5FDA24B846F800D327D2 /* DetailScreenViewModel.swift */; };
 		69FF204324AE9FBE00267FB1 /* PlanetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FF204224AE9FBE00267FB1 /* PlanetModel.swift */; };
 		9DB1C1F6A4DB29FFE3A4692E /* Pods_TemplateProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E7212245EF336E0527C288 /* Pods_TemplateProjectTests.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +53,7 @@
 		14917E0B200A489A00234393 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		14917E0D200A48AB00234393 /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		14917E10200A491C00234393 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
-		14917E16200A4F4600234393 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		14917E16200A4F4600234393 /* PlanetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewModel.swift; sourceTree = "<group>"; };
 		14917E18200A508700234393 /* PlanetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCell.swift; sourceTree = "<group>"; };
 		14917E1A200A523E00234393 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		14917E1F200A52DF00234393 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -59,6 +62,9 @@
 		2C0E5A0533D8493C5C1E7FF9 /* Pods-TemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.release.xcconfig"; path = "Target Support Files/Pods-TemplateProject/Pods-TemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 		48234A84BE94EEECB684E866 /* Pods-TemplateProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProjectTests.release.xcconfig"; path = "Target Support Files/Pods-TemplateProjectTests/Pods-TemplateProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		69A2B9E22499EE5100260871 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
+		69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailScreenStoryboard.storyboard; sourceTree = "<group>"; };
+		69DE5FDA24B846F800D327D2 /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		69FF204224AE9FBE00267FB1 /* PlanetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetModel.swift; sourceTree = "<group>"; };
 		959D193BFFAC7F389D0CB859 /* Pods-TemplateProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.debug.xcconfig"; path = "Target Support Files/Pods-TemplateProject/Pods-TemplateProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9F691EF51EAE9808A2EE5537 /* Pods_TemplateProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +116,7 @@
 				14917E1E200A52CD00234393 /* Resources */,
 				14917E12200A4EC000234393 /* Models */,
 				14917E09200A486F00234393 /* Services */,
-				142350FC200968A900930F1D /* ViewModels */,
+				142350FC200968A900930F1D /* View Models */,
 				142350FB2009689B00930F1D /* Views */,
 				142350DB2009668500930F1D /* AppDelegate.swift */,
 				142350DF2009668500930F1D /* Main.storyboard */,
@@ -126,16 +132,19 @@
 			children = (
 				142350DD2009668500930F1D /* PlanetTableViewController.swift */,
 				14917E18200A508700234393 /* PlanetCell.swift */,
+				69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */,
+				69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		142350FC200968A900930F1D /* ViewModels */ = {
+		142350FC200968A900930F1D /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				14917E16200A4F4600234393 /* ViewModel.swift */,
+				14917E16200A4F4600234393 /* PlanetListViewModel.swift */,
+				69DE5FDA24B846F800D327D2 /* DetailScreenViewModel.swift */,
 			);
-			path = ViewModels;
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		14917E09200A486F00234393 /* Services */ = {
@@ -209,7 +218,6 @@
 				E6D5C2B37D3FE4E992E6D179 /* Pods-TemplateProjectTests.debug.xcconfig */,
 				48234A84BE94EEECB684E866 /* Pods-TemplateProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -298,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DE5FD924B8449300D327D2 /* DetailScreenStoryboard.storyboard in Resources */,
 				142350E62009668500930F1D /* LaunchScreen.storyboard in Resources */,
 				142350E32009668500930F1D /* Assets.xcassets in Resources */,
 				142350E12009668500930F1D /* Main.storyboard in Resources */,
@@ -365,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DE5FD724B842AD00D327D2 /* DetailScreenViewController.swift in Sources */,
 				14917E19200A508700234393 /* PlanetCell.swift in Sources */,
 				14917E23200A530800234393 /* ParserHelper.swift in Sources */,
 				14917E0C200A489A00234393 /* Result.swift in Sources */,
@@ -372,12 +382,13 @@
 				14917E11200A491C00234393 /* RequestFactory.swift in Sources */,
 				69A2B9E32499EE5100260871 /* APIService.swift in Sources */,
 				14917E27200A53CD00234393 /* RequestService.swift in Sources */,
-				14917E17200A4F4600234393 /* ViewModel.swift in Sources */,
+				14917E17200A4F4600234393 /* PlanetListViewModel.swift in Sources */,
 				14917E1B200A523E00234393 /* RequestHandler.swift in Sources */,
 				14917E20200A52DF00234393 /* Reachability.swift in Sources */,
 				14917E0E200A48AB00234393 /* ErrorResult.swift in Sources */,
 				142350DE2009668500930F1D /* PlanetTableViewController.swift in Sources */,
 				142350DC2009668500930F1D /* AppDelegate.swift in Sources */,
+				69DE5FDB24B846F800D327D2 /* DetailScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

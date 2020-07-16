@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  PlanetListViewModel.swift
 //  TemplateProject
 //
 //  Created by Benoit PASQUIER on 13/01/2018.
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct ViewModel {
+struct PlanetListViewModel {
     weak var apiService: APIServiceObservable?
     let input: Input
     let output: Output
