@@ -21,12 +21,18 @@ class PlanetTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Star Wars Planets"
+        self.title = "Planets"
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithTransparentBackground()
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
-        navBarAppearance.backgroundColor = .systemBackground
+        
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label,
+                                                .font: UIFont.init(name: "Palanquin-Bold", size: CGFloat(20))!]
+        
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label,
+                                                     .font: UIFont.init(name: "Palanquin-Bold", size: CGFloat(44))!]
+        
+        navBarAppearance.backgroundColor = .clear
+        navBarAppearance.backgroundEffect = UIBlurEffect.init(style: .regular)
         navBarAppearance.shadowColor = .none
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance

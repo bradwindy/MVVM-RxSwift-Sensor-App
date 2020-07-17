@@ -14,12 +14,14 @@ struct DetailScreenViewModel {
     let input: Input
     let output: Output
     
+
+    
     struct Input {
         let reload: PublishRelay<Void>
     }
     
     struct Output {
-        let planet: Driver<Planet?>
+        let properties: Driver<[PlanetProperty]>
         let errorMessage: Driver<String>
     }
     
@@ -27,15 +29,16 @@ struct DetailScreenViewModel {
         let errorRelay = PublishRelay<String>()
         let reloadRelay = PublishRelay<Void>()
         
-        let planetDriver = reloadRelay
-            .map({ planet })
-            .asDriver { (error) -> Driver<Planet?> in
+        let properties = reloadRelay
+            .asObservable()
+            .map({ planet.getProperties() })
+            .asDriver { (error) -> Driver<[PlanetProperty]> in
                 errorRelay.accept((error as? ErrorResult)?.localizedDescription ?? error.localizedDescription)
-                return Driver.just(nil)
+                return Driver.just([])
         }
         
         self.input = Input(reload: reloadRelay)
-        self.output = Output(planet: planetDriver,
+        self.output = Output(properties: properties,
                              errorMessage: errorRelay.asDriver(onErrorJustReturn: "An error happened"))
     }
 }

@@ -98,3 +98,20 @@ extension Planet: Parseable {
         }
     }
 }
+
+extension Planet {
+    func getProperties() -> [PlanetProperty] {
+        var properties = [PlanetProperty]()
+        
+        properties.append(PlanetProperty(detail: self.climate, unit: nil, description: "Climate"))
+        properties.append(PlanetProperty(detail: self.diameter, unit: "km", description: "Diameter"))
+        properties.append(PlanetProperty(detail: self.gravity, unit: "g", description: "Gravity"))
+        properties.append(PlanetProperty(detail: self.orbitalPeriod, unit: "days", description: "Orbital Period"))
+        properties.append(PlanetProperty(detail: self.population, unit: "people", description: "Population"))
+        properties.append(PlanetProperty(detail: self.rotationPeriod, unit: "hours", description: "Rotation Period"))
+        properties.append(PlanetProperty(detail: self.surfaceWater, unit: "???", description: "Surface Water"))
+        properties.append(PlanetProperty(detail: self.terrain, unit: nil, description: "Terrain"))
+        
+        return properties
+    }
+}

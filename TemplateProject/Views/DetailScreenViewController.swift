@@ -12,8 +12,7 @@ import RxCocoa
 import RxGesture
 
 class DetailScreenViewController: UIViewController {
-    @IBOutlet weak var testLabel: UILabel!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     // Force unwrapped as I will always set this after instatiating VC
     var viewModel: DetailScreenViewModel!
     private let disposeBag = DisposeBag()
@@ -24,13 +23,16 @@ class DetailScreenViewController: UIViewController {
     }
     
     private func bindViews() {
-        self.viewModel.output.planet.drive(onNext: { [weak self] planet in
-            self?.title = planet?.name
-            
-            // Send data to outlets here
-            self?.testLabel.text = planet?.population
-            
-        }).disposed(by: disposeBag)
+        self.viewModel.output.properties.drive(
+            self.collectionView.rx.items(cellIdentifier: "UnitCell",
+                                    cellType: UnitCell.self)) { (index, property, cell) in
+                                        
+                                        cell.amount = property.detail
+                                        cell.unit = property.unit
+                                        cell.desc = property.description
+                                        
+                                        
+        }.disposed(by: disposeBag)
         
         self.viewModel.output.errorMessage.drive(onNext: { [weak self] errorMessage in
             guard let self = self else { return }

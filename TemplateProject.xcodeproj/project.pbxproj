@@ -22,6 +22,16 @@
 		14917E20200A52DF00234393 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E1F200A52DF00234393 /* Reachability.swift */; };
 		14917E23200A530800234393 /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E22200A530800234393 /* ParserHelper.swift */; };
 		14917E27200A53CD00234393 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14917E26200A53CD00234393 /* RequestService.swift */; };
+		6908DE2D24C11DDC00068661 /* UnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908DE2C24C11DDC00068661 /* UnitCell.swift */; };
+		6908DE3624C127C900068661 /* Palanquin-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE2F24C127C900068661 /* Palanquin-Light.ttf */; };
+		6908DE3724C127C900068661 /* Palanquin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3024C127C900068661 /* Palanquin-Medium.ttf */; };
+		6908DE3824C127C900068661 /* Palanquin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3124C127C900068661 /* Palanquin-Bold.ttf */; };
+		6908DE3924C127C900068661 /* Palanquin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3224C127C900068661 /* Palanquin-Regular.ttf */; };
+		6908DE3A24C127C900068661 /* Palanquin-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3324C127C900068661 /* Palanquin-Thin.ttf */; };
+		6908DE3B24C127C900068661 /* Palanquin-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3424C127C900068661 /* Palanquin-SemiBold.ttf */; };
+		6908DE3C24C127C900068661 /* Palanquin-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6908DE3524C127C900068661 /* Palanquin-ExtraLight.ttf */; };
+		6908DE3F24C1333600068661 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908DE3E24C1333600068661 /* String+Additions.swift */; };
+		6908DE4124C150DE00068661 /* PlanetProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908DE4024C150DE00068661 /* PlanetProperty.swift */; };
 		69A2B9E32499EE5100260871 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A2B9E22499EE5100260871 /* APIService.swift */; };
 		69DE5FD724B842AD00D327D2 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */; };
 		69DE5FD924B8449300D327D2 /* DetailScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */; };
@@ -61,6 +71,16 @@
 		14917E26200A53CD00234393 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		2C0E5A0533D8493C5C1E7FF9 /* Pods-TemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProject.release.xcconfig"; path = "Target Support Files/Pods-TemplateProject/Pods-TemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 		48234A84BE94EEECB684E866 /* Pods-TemplateProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateProjectTests.release.xcconfig"; path = "Target Support Files/Pods-TemplateProjectTests/Pods-TemplateProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		6908DE2C24C11DDC00068661 /* UnitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCell.swift; sourceTree = "<group>"; };
+		6908DE2F24C127C900068661 /* Palanquin-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-Light.ttf"; sourceTree = "<group>"; };
+		6908DE3024C127C900068661 /* Palanquin-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-Medium.ttf"; sourceTree = "<group>"; };
+		6908DE3124C127C900068661 /* Palanquin-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-Bold.ttf"; sourceTree = "<group>"; };
+		6908DE3224C127C900068661 /* Palanquin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-Regular.ttf"; sourceTree = "<group>"; };
+		6908DE3324C127C900068661 /* Palanquin-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-Thin.ttf"; sourceTree = "<group>"; };
+		6908DE3424C127C900068661 /* Palanquin-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-SemiBold.ttf"; sourceTree = "<group>"; };
+		6908DE3524C127C900068661 /* Palanquin-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Palanquin-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6908DE3E24C1333600068661 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		6908DE4024C150DE00068661 /* PlanetProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetProperty.swift; sourceTree = "<group>"; };
 		69A2B9E22499EE5100260871 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailScreenStoryboard.storyboard; sourceTree = "<group>"; };
@@ -113,6 +133,7 @@
 		142350DA2009668500930F1D /* TemplateProject */ = {
 			isa = PBXGroup;
 			children = (
+				6908DE3D24C132DC00068661 /* Extensions */,
 				14917E1E200A52CD00234393 /* Resources */,
 				14917E12200A4EC000234393 /* Models */,
 				14917E09200A486F00234393 /* Services */,
@@ -132,6 +153,7 @@
 			children = (
 				142350DD2009668500930F1D /* PlanetTableViewController.swift */,
 				14917E18200A508700234393 /* PlanetCell.swift */,
+				6908DE2C24C11DDC00068661 /* UnitCell.swift */,
 				69DE5FD624B842AD00D327D2 /* DetailScreenViewController.swift */,
 				69DE5FD824B8449300D327D2 /* DetailScreenStoryboard.storyboard */,
 			);
@@ -181,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				69FF204224AE9FBE00267FB1 /* PlanetModel.swift */,
+				6908DE4024C150DE00068661 /* PlanetProperty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +211,7 @@
 		14917E1E200A52CD00234393 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6908DE2E24C1251C00068661 /* Fonts */,
 				14917E1F200A52DF00234393 /* Reachability.swift */,
 			);
 			path = Resources;
@@ -208,6 +232,28 @@
 				00E7212245EF336E0527C288 /* Pods_TemplateProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6908DE2E24C1251C00068661 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6908DE3124C127C900068661 /* Palanquin-Bold.ttf */,
+				6908DE3524C127C900068661 /* Palanquin-ExtraLight.ttf */,
+				6908DE2F24C127C900068661 /* Palanquin-Light.ttf */,
+				6908DE3024C127C900068661 /* Palanquin-Medium.ttf */,
+				6908DE3224C127C900068661 /* Palanquin-Regular.ttf */,
+				6908DE3424C127C900068661 /* Palanquin-SemiBold.ttf */,
+				6908DE3324C127C900068661 /* Palanquin-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6908DE3D24C132DC00068661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6908DE3E24C1333600068661 /* String+Additions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F5E0D29E2A6391DF69C7DDBA /* Pods */ = {
@@ -307,9 +353,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				69DE5FD924B8449300D327D2 /* DetailScreenStoryboard.storyboard in Resources */,
+				6908DE3B24C127C900068661 /* Palanquin-SemiBold.ttf in Resources */,
+				6908DE3924C127C900068661 /* Palanquin-Regular.ttf in Resources */,
+				6908DE3724C127C900068661 /* Palanquin-Medium.ttf in Resources */,
 				142350E62009668500930F1D /* LaunchScreen.storyboard in Resources */,
+				6908DE3624C127C900068661 /* Palanquin-Light.ttf in Resources */,
 				142350E32009668500930F1D /* Assets.xcassets in Resources */,
+				6908DE3A24C127C900068661 /* Palanquin-Thin.ttf in Resources */,
+				6908DE3824C127C900068661 /* Palanquin-Bold.ttf in Resources */,
 				142350E12009668500930F1D /* Main.storyboard in Resources */,
+				6908DE3C24C127C900068661 /* Palanquin-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,9 +436,12 @@
 				69A2B9E32499EE5100260871 /* APIService.swift in Sources */,
 				14917E27200A53CD00234393 /* RequestService.swift in Sources */,
 				14917E17200A4F4600234393 /* PlanetListViewModel.swift in Sources */,
+				6908DE2D24C11DDC00068661 /* UnitCell.swift in Sources */,
 				14917E1B200A523E00234393 /* RequestHandler.swift in Sources */,
 				14917E20200A52DF00234393 /* Reachability.swift in Sources */,
+				6908DE4124C150DE00068661 /* PlanetProperty.swift in Sources */,
 				14917E0E200A48AB00234393 /* ErrorResult.swift in Sources */,
+				6908DE3F24C1333600068661 /* String+Additions.swift in Sources */,
 				142350DE2009668500930F1D /* PlanetTableViewController.swift in Sources */,
 				142350DC2009668500930F1D /* AppDelegate.swift in Sources */,
 				69DE5FDB24B846F800D327D2 /* DetailScreenViewModel.swift in Sources */,
